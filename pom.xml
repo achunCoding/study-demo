@@ -120,6 +120,7 @@
     <modules>
         <module>spring-caching</module>
         <module>mapstruct</module>
+        <module>core-java-modules</module>
     </modules>
     <build>
         <finalName>study-demo</finalName>

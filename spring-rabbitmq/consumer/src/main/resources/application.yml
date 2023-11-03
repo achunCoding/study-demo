@@ -1,0 +1,23 @@
+spring:
+  rabbitmq:
+    host: 82.157.161.202 # 主机名
+    port: 5672 # 端口号
+    username: chun # 用户名
+    password: chun12138 # 密码
+    virtual-host: / # 虚拟主机名
+    listener:
+      simple:
+        acknowledge-mode: auto # 确认机制， 自动确认
+        prefetch: 1
+        retry:
+          enabled: true # 开启消费者重试
+          initial-interval: 1000ms # 失败后初始等待时间
+          mluutiplier: 1 # 失败后下次等待时长的倍数
+          max-attempts: 3 # 最大重试次数
+          stateless: true # 如果业务中包含事务 则返回false  返回true  每次重试都是独立的
+
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  port: 9090

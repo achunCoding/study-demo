@@ -1,0 +1,21 @@
+spring:
+  rabbitmq:
+    host: 82.157.161.202 # 主机名
+    port: 5672 # 端口号
+    username: chun # 用户名
+    password: chun12138 # 密码
+    virtual-host: / # 虚拟主机名
+    connection-timeout: 1s # 设置MQ的连接超时时间
+    template:
+      retry:
+        enabled: true # 开启超时重连机制
+        initial-interval: 1000ms # 失败后初始等待时间
+        multiplier: 1 # 失败后下次等待时长的倍数
+        max-attempts: 3 # 最大重试次数
+    publisher-returns: false
+    publisher-confirm-type: correlated
+server:
+  port: 8080
+logging:
+  level:
+    cn.wycfight.study.publisher: debug

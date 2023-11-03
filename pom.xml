@@ -121,6 +121,7 @@
         <module>spring-caching</module>
         <module>mapstruct</module>
         <module>core-java-modules</module>
+        <module>spring-rabbitmq</module>
     </modules>
     <build>
         <finalName>study-demo</finalName>
